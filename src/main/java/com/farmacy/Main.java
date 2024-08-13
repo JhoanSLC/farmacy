@@ -6,6 +6,6 @@ public class Main {
     public static void main(String[] args) {
         ModeAdController modeAdController = new ModeAdController();
 
-        modeAdController.createModeAd();
+        modeAdController.deleteModeAd();
     }
 }

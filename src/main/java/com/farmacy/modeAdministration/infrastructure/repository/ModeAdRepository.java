@@ -42,19 +42,27 @@ public class ModeAdRepository implements ModeAdService {
     }
 
     @Override
-    public void deleteModeAd(Long id) {
-        // TODO Auto-generated method stub
+    public void deleteModeAd(long id) {
+        String deleteModeAd = "DELETE FROM modeAdministration WHERE id = ?";
+
+        try (PreparedStatement ps = con.prepareStatement(deleteModeAd)){
+           ps.setLong(1, id); 
+           ps.executeUpdate();
+           ps.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
     }
 
     @Override
-    public Optional<ModeAdministration> findModeAdById(Long id) {
+    public Optional<ModeAdministration> findModeAdById(long id) {
         // TODO Auto-generated method stub
         return Optional.empty();
     }
 
     @Override
-    public void updateModeAd(Long id) {
+    public void updateModeAd(long id) {
         // TODO Auto-generated method stub
         
     }
