@@ -1,33 +1,24 @@
 package com.farmacy.modeAdministration.infrastructure.repository;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
-import java.util.Properties;
 
 import com.farmacy.modeAdministration.domain.entitiy.ModeAdministration;
 import com.farmacy.modeAdministration.domain.service.ModeAdService;
+
+import database.DatabaseConnection;
 
 public class ModeAdRepository implements ModeAdService {
     private Connection con;
 
     public ModeAdRepository(){
-        try {
-            Properties props = new Properties();
-            props.load(getClass().getClassLoader().getResourceAsStream("db.properties"));
-            final String URL = props.getProperty("url");
-            final String USER = props.getProperty("user");
-            final String PASSWORD = props.getProperty("password");
-            con = DriverManager.getConnection(URL,USER,PASSWORD);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch ( IOException e ) {
-            e.printStackTrace();
-        }
+        DatabaseConnection database = new DatabaseConnection();
+
+        con = database.connectDatabase();
     }
 
     @Override
