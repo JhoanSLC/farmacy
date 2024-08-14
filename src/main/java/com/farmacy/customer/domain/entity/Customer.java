@@ -1,6 +1,6 @@
 package com.farmacy.customer.domain.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Customer {
     private String idCustomer;

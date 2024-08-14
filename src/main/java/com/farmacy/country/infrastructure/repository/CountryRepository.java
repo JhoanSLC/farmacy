@@ -16,7 +16,7 @@ public class CountryRepository implements CountryService {
     public void createCountry(Country country) {
         String query = "INSERT INTO country (codeCountry, nameCountry) VALUES (?, ?)";
         try (Connection con = databaseConnection.connectDatabase();
-             PreparedStatement stmt = con.prepareStatement(query)) {
+            PreparedStatement stmt = con.prepareStatement(query)) {
             stmt.setString(1, country.getCodeCountry());
             stmt.setString(2, country.getNameCountry());
             stmt.executeUpdate();
