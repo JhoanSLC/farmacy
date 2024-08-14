@@ -16,6 +16,7 @@ public class MainUi {
     private final CityMenu cityMenu = new CityMenu();
     private final CustomerMenu customerMenu = new CustomerMenu();
     private final LabatoryMenu labatoryMenu = new LabatoryMenu();
+    private final MedicineMenu medicineMenu = new MedicineMenu();
 
 
     public MainUi() {}
@@ -26,7 +27,7 @@ public class MainUi {
             screen.clean();
             System.out.printf("++++++++++++++++++%n++ FARMACY CRUD ++%n++++++++++++++++++%n");
             System.out.printf("%nType the number of the table you want to access:%n");
-            System.out.printf("%n1. Mode Administration%n2. Unit Measurement%n3. Active Principle%n4. Country%n5. Region%n6. City%n7. Customer%n8. Labatory%n0. Exit%n");
+            System.out.printf("%n1. Mode Administration%n2. Unit Measurement%n3. Active Principle%n4. Country%n5. Region%n6. City%n7. Customer%n8. Labatory%n9. Medicine%n0. Exit%n");
             System.out.println("");
             System.out.print("Choose an option: ");
             String userOption = sc.nextLine();
@@ -56,6 +57,9 @@ public class MainUi {
                     break;
                 case "8":
                     labatoryMenu.labatoryMenu();
+                    break;
+                case "9":
+                    medicineMenu.medicineMenu();
                     break;
                 case "0":
                     isThisRunning = false;

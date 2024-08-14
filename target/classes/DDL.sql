@@ -30,7 +30,7 @@ CREATE TABLE region(
 );
 
 CREATE TABLE city(
-	codeCIty VARCHAR(5) PRIMARY KEY UNIQUE,
+	codeCty VARCHAR(5) PRIMARY KEY UNIQUE,
     nameCity VARCHAR(50) NOT NULL,
     codeReg VARCHAR(5) NOT NULL,
     CONSTRAINT FkCityRegion FOREIGN KEY (codeReg) REFERENCES region(codeReg),
