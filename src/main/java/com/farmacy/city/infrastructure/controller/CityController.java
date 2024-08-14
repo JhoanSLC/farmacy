@@ -35,47 +35,47 @@ public class CityController {
 
     public void createCity() {
         screen.clean();
-        System.out.println("Ingrese el código de la ciudad:");
+        System.out.println("Enter the city code:");
         String codeCity = scan.nextLine();
-        System.out.println("Ingrese el nombre de la ciudad:");
+        System.out.println("Enter the city name:");
         String nameCity = scan.nextLine();
-        System.out.println("Ingrese el código de la región:");
+        System.out.println("Enter the region code:");
         String codeReg = scan.nextLine();
         City city = new City(codeCity, nameCity, codeReg);
         createCityUC.create(city);
-        System.out.println("Ciudad creada exitosamente.");
+        System.out.println("City created successfully.");
     }
 
     public void deleteCity() {
         screen.clean();
-        System.out.println("Ingrese el código de la ciudad a eliminar:");
+        System.out.println("Enter the code of the city to delete:");
         String codeCity = scan.nextLine();
         deleteCityUC.delete(codeCity);
-        System.out.println("Ciudad eliminada exitosamente.");
+        System.out.println("City deleted successfully.");
     }
 
     public void findCityById() {
         screen.clean();
-        System.out.println("Ingrese el código de la ciudad a buscar:");
+        System.out.println("Enter the code of the city to search:");
         String codeCity = scan.nextLine();
         Optional<City> city = findCityByIdUC.findById(codeCity);
         city.ifPresentOrElse(
-            c -> System.out.println("Ciudad encontrada: " + c.getNameCity() + " (" + c.getCodeCity() + ")"),
-            () -> System.out.println("Ciudad no encontrada.")
+            c -> System.out.println("City found: " + c.getNameCity() + " (" + c.getCodeCity() + ")"),
+            () -> System.out.println("City not found.")
         );
         screen.pause();
     }
 
     public void updateCity() {
         screen.clean();
-        System.out.println("Ingrese el código de la ciudad a actualizar:");
+        System.out.println("Enter the code of the city to update:");
         String codeCity = scan.nextLine();
-        System.out.println("Ingrese el nuevo nombre de la ciudad:");
+        System.out.println("Enter the new city name:");
         String nameCity = scan.nextLine();
-        System.out.println("Ingrese el nuevo código de la región:");
+        System.out.println("Enter the new region code:");
         String codeReg = scan.nextLine();
         updateCityUC.update(codeCity, nameCity, codeReg);
-        System.out.println("Ciudad actualizada exitosamente.");
+        System.out.println("City updated successfully.");
     }
 
     public void listAllCities() {

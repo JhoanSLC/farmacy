@@ -1,45 +1,45 @@
 package com.farmacy.ui;
 
-import com.farmacy.customer.infrastructure.controller.CustomerController;
+import com.farmacy.labatory.infrastructure.controller.LabatoryController;
 import com.farmacy.screen.ScreenController;
 
 import java.util.Scanner;
 
-public class CustomerMenu {
-    private final CustomerController customerController;
+public class LabatoryMenu {
+    private final LabatoryController labatoryController;
     private final Scanner sc = new Scanner(System.in);
     private final ScreenController screen = new ScreenController();
 
-    public CustomerMenu() {
-        this.customerController = new CustomerController();
+    public LabatoryMenu() {
+        this.labatoryController = new LabatoryController();
     }
 
-    public void customerMenu() {
+    public void labatoryMenu() {
         boolean isRunning = true;
         while (isRunning) {
             screen.clean();
-            System.out.printf("+++++++++++++++++++%n++ Customer CRUD ++%n+++++++++++++++++++%n");
+            System.out.printf("+++++++++++++++++++%n++ Labatory CRUD ++%n+++++++++++++++++++%n");
             System.out.printf("%nType the number of the action you want to perform%n");
-            System.out.printf("%n1. Create customer%n2. Find customer by ID%n3. Update customer%n4. Delete customer%n5. List all customers%n6. Return to Main Menu%n");
+            System.out.printf("%n1. Create labatory%n2. Find labatory by ID%n3. Update labatory%n4. Delete labatory%n5. List all labatories%n6. Return to Main Menu%n");
             System.out.println("");
             System.out.print("Choose an option: ");
             String userOption = sc.nextLine();
             
             switch (userOption) {
                 case "1":
-                    customerController.createCustomer();
+                    labatoryController.createLabatory();
                     break;
                 case "2":
-                    customerController.findCustomerById();
+                    labatoryController.findLabatoryById();
                     break;
                 case "3":
-                    customerController.updateCustomer();
+                    labatoryController.updateLabatory();
                     break;
                 case "4":
-                    customerController.deleteCustomer();
+                    labatoryController.deleteLabatory();
                     break;
                 case "5":
-                    customerController.listAllCustomers();
+                    labatoryController.listAllLabatories();
                     break;
                 case "6":
                     isRunning = false;
