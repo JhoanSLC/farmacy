@@ -57,6 +57,7 @@ public class UnitMeController {
         long scannedId = scan.nextLong();
         scan.nextLine();
         findUnitMeasurementByIdUC.findById(scannedId);
+        screen.pause();
     }
 
     public void updateUnitMeasurement() {

@@ -9,32 +9,37 @@ public class MainUi {
     private final ModeAdMenu modeAdMenu = new ModeAdMenu();
     private final UnitMeasurementMenu unitMeasurementMenu = new UnitMeasurementMenu(); 
     private final ActivePrincipleMenu activePrincipleMenu = new ActivePrincipleMenu();
+    private final CountryMenu countryMenu = new CountryMenu(); // Nuevo menú
 
-    public MainUi(){}
+    public MainUi() {}
 
     public void mainMenu() {
         boolean isThisRunning = true;
-        while (isThisRunning){
+        while (isThisRunning) {
             screen.clean();
             System.out.printf("++++++++++++++++++%n++ FARMACY CRUD ++%n++++++++++++++++++%n");
             System.out.printf("%nType the number of the table you want to access:%n");
             System.out.printf("%n1. modeAdministration%n");
             System.out.println("2. unitMeasurement");
             System.out.println("3. activePrinciple");
+            System.out.println("4. country"); // Nuevo menú
             System.out.printf("0. Exit%n");
-            String userOption = sc.nextLine(); // Lee la entrada del usuario
+            String userOption = sc.nextLine();
             switch (userOption) {
                 case "1":
-                    modeAdMenu.modeAdministrationMenu(); // Navega al menú de modeAdministration
+                    modeAdMenu.modeAdministrationMenu();
                     break;
                 case "2":
-                    unitMeasurementMenu.unitMeasurementMenu(); // Navega al menú de unitMeasurement
+                    unitMeasurementMenu.unitMeasurementMenu();
                     break;
                 case "3":
                     activePrincipleMenu.showMenu();
                     break;
+                case "4":
+                    countryMenu.countryMenu(); // Accede al menú de country
+                    break;
                 case "0":
-                    isThisRunning = false; // Finaliza el bucle, saliendo del programa
+                    isThisRunning = false;
                     break;
                 default:
                     screen.clean();

@@ -57,6 +57,7 @@ public class ModeAdController {
         long scannedId = scan.nextLong();
         scan.nextLine();
         findModeByIdUC.findById(scannedId);
+        screen.pause();
     }
 
     public void updateModeAd(){

@@ -53,10 +53,11 @@ public class ActivePrincipleController {
 
     public void findActivePrincipleById() {
         screen.clean();
-        System.out.println("Type the ID of the active principle you want to view:");
+        System.out.printf("%nType the ID of the active principle you want to view:%n");
         long idAp = scan.nextLong();
-        scan.nextLine(); // Limpiar el buffer
+        scan.nextLine();
         findActivePrincipleByIdUC.findById(idAp);
+        screen.pause();
     }
 
     public void updateActivePrinciple() {
@@ -69,6 +70,7 @@ public class ActivePrincipleController {
 
         updateActivePrincipleUC.update(idAp, nameAp);
         System.out.println("Active principle updated successfully.");
+        screen.pause();
     }
 
     public void listAllActivePrinciples() {

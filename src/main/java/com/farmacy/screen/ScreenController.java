@@ -1,5 +1,7 @@
 package com.farmacy.screen;
 
+import java.util.Scanner;
+
 public class ScreenController {
     protected String os = System.getProperty("os.name");
 
@@ -19,5 +21,12 @@ public class ScreenController {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void pause(){
+        Scanner scan = new Scanner(System.in);
+        System.out.printf("%nPress any key to continue...%n");
+        scan.nextLine();
+        scan.close();
     }
 }
