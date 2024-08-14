@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
+import java.util.List;
+import java.util.ArrayList;
 
 import com.farmacy.database.DatabaseConnection;
 import com.farmacy.unitMeasurement.domain.entity.UnitMeasurement;
@@ -82,5 +84,23 @@ public class UnitMeRepository implements UnitMeasurementService{
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+
+    @Override
+    public List<UnitMeasurement> listAllUnitMeasurement() {
+        List<UnitMeasurement> unitMeasurements = new ArrayList<>();
+        String query = "SELECT idUm, nameUm FROM unitMeasurement";
+        try (PreparedStatement ps = con.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                long id = rs.getLong("idUm");
+                String name = rs.getString("nameUm");
+                unitMeasurements.add(new UnitMeasurement(id,name));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return unitMeasurements;
     }
 }

@@ -80,8 +80,11 @@ public class ActivePrincipleController {
             System.out.println("No active principles found.");
         } else {
             for (ActivePrinciple activePrinciple : activePrinciples) {
+                System.out.println("");
                 System.out.printf("Id: %d%nName: %s%n", activePrinciple.getIdAp(), activePrinciple.getNameAp());
             }
         }
+        System.out.printf("%nPress any key to continue...");
+        scan.nextLine();
     }
 }

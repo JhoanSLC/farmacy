@@ -18,7 +18,7 @@ public class ActivePrincipleMenu {
         boolean running = true;
 
         while (running) {
-            screen.celan()
+            screen.clean();
             System.out.println("--- Active Principle Menu ---\n");
             System.out.println("1. Create Active Principle");
             System.out.println("2. Delete Active Principle");

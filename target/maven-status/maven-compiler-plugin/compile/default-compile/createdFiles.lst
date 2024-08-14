@@ -1,8 +1,0 @@
-com\farmacy\modeAdministration\domain\entitiy\ModeAdministration.class
-com\farmacy\Main.class
-database\DatabaseConnection.class
-com\farmacy\modeAdministration\application\CreateModeAdUC.class
-com\farmacy\modeAdministration\application\DeleteModeAdUC.class
-com\farmacy\modeAdministration\infrastructure\controller\ModeAdController.class
-com\farmacy\modeAdministration\infrastructure\repository\ModeAdRepository.class
-com\farmacy\modeAdministration\domain\service\ModeAdService.class

@@ -19,7 +19,7 @@ public class ModeAdMenu {
             screen.clean();
             System.out.printf("++++++++++++++++++++++++++%n++ Mode Administration CRUD ++%n++++++++++++++++++++++++++%n");
             System.out.printf("%nType the number of the action you want to perform%n");
-            System.out.printf("%n1. Create modeAdministration%n2. Find modeAdministration by ID%n3. Update modeAdministration%n4. Delete modeAdministration%n5. Return to Main Menu%n");
+            System.out.printf("%n1. Create modeAdministration%n2. Find modeAdministration by ID%n3. Update modeAdministration%n4. Delete modeAdministration%n5. List all modeAdministrations%n6. Return to Main Menu%n");
             String userOption = sc.nextLine(); // Usa el mismo Scanner para todas las iteraciones
             
             switch (userOption) {
@@ -36,6 +36,9 @@ public class ModeAdMenu {
                     modeAdController.deleteModeAd();
                     break;
                 case "5":
+                    modeAdController.listAllModeAd();
+                    break;
+                case "6":
                     isRunning = false;
                     break;
                 default:

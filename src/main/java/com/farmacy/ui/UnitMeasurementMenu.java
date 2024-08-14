@@ -19,7 +19,7 @@ public class UnitMeasurementMenu {
             screen.clean();
             System.out.printf("++++++++++++++++++++++++++%n++ Unit Measurement CRUD ++%n++++++++++++++++++++++++++%n");
             System.out.printf("%nType the number of the action you want to perform%n");
-            System.out.printf("%n1. Create unitMeasurement%n2. Find unitMeasurement by ID%n3. Update unitMeasurement%n4. Delete unitMeasurement%n5. Return to Main Menu%n");
+            System.out.printf("%n1. Create unitMeasurement%n2. Find unitMeasurement by ID%n3. Update unitMeasurement%n4. Delete unitMeasurement%n5. List all unitMeasurement%n6. Return to Main Menu%n");
             String userOption = sc.nextLine(); // Usa el mismo Scanner para todas las iteraciones
             
             switch (userOption) {
@@ -36,6 +36,9 @@ public class UnitMeasurementMenu {
                     unitMeController.deleteUnitMeasurement();
                     break;
                 case "5":
+                    unitMeController.listAllUnitMeasurements();
+                    break;
+                case "6":
                     isRunning = false;
                     break;
                 default:

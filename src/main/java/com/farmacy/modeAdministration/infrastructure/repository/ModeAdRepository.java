@@ -5,10 +5,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
+import java.util.List;
+import java.util.ArrayList;
 
 import com.farmacy.database.DatabaseConnection;
 import com.farmacy.modeAdministration.domain.entitiy.ModeAdministration;
 import com.farmacy.modeAdministration.domain.service.ModeAdService;
+
 
 public class ModeAdRepository implements ModeAdService {
     private Connection con;
@@ -88,6 +91,23 @@ public class ModeAdRepository implements ModeAdService {
             e.printStackTrace();
         }
         
+    }
+
+        @Override
+    public List<ModeAdministration> listAllModeAd() {
+        List<ModeAdministration> modeAdministrations = new ArrayList<>();
+        String query = "SELECT id, descriptionMode FROM modeAdministration";
+        try (PreparedStatement ps = con.prepareStatement(query);
+             ResultSet rs = ps.executeQuery()) {
+            while (rs.next()) {
+                long id = rs.getLong("id");
+                String description = rs.getString("descriptionMode");
+                modeAdministrations.add(new ModeAdministration(id, description));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return modeAdministrations;
     }
 
     
