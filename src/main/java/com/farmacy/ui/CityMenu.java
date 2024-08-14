@@ -17,7 +17,7 @@ public class CityMenu {
         boolean running = true;
         while (running) {
             screen.clean();
-            System.out.printf("+++++++++++++++%n++ City Menu ++%n+++++++++++++++");
+            System.out.printf("+++++++++++++++%n++ City Menu ++%n+++++++++++++++%n");
             System.out.printf("%n1. Create City%n");
             System.out.println("2. Delete City");
             System.out.println("3. Find City by Code");
@@ -30,13 +30,27 @@ public class CityMenu {
             scan.nextLine(); 
 
             switch (option) {
-                case 1 -> cityController.createCity();
-                case 2 -> cityController.deleteCity();
-                case 3 -> cityController.findCityById();
-                case 4 -> cityController.updateCity();
-                case 5 -> cityController.listAllCities();
-                case 6 -> running = false;
-                default -> System.out.println("Invalid option, please try again.");
+                case 1: 
+                    cityController.createCity();
+                    break;
+                case 2:
+                    cityController.deleteCity();
+                    break;
+                case 3:
+                    cityController.findCityById();
+                    break;
+                case 4:
+                    cityController.updateCity();
+                    break;
+                case 5:
+                    cityController.listAllCities();
+                    break;
+                case 6:
+                    running = false;
+                    break;
+                default:
+                    System.out.println("Invalid option, please try again.");
+                    break;
             }
         }
     }

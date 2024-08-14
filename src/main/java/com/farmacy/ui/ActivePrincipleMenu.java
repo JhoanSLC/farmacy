@@ -19,7 +19,7 @@ public class ActivePrincipleMenu {
 
         while (running) {
             screen.clean();
-            System.out.println("--- Active Principle Menu ---\n");
+            System.out.printf("++++++++++++++++++++++++++++%n++ Active Principle Menu  ++%n+++++++++++++++++++++++++++%n");
             System.out.println("\n1. Create Active Principle");
             System.out.println("2. Delete Active Principle");
             System.out.println("3. Find Active Principle by ID");

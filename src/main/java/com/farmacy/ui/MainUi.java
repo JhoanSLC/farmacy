@@ -47,6 +47,7 @@ public class MainUi {
                     break;
                 case "6":
                     cityMenu.display();
+                    break;
                 case "0":
                     isThisRunning = false;
                     break;
