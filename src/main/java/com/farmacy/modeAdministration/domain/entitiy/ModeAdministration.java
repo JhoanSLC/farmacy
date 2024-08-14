@@ -1,14 +1,14 @@
 package com.farmacy.modeAdministration.domain.entitiy;
 
 public class ModeAdministration {
-    private Long id;
+    private long id;
     private String descriptionMode;
 
     
     public ModeAdministration() {
     }
 
-    public ModeAdministration(Long id, String descriptionMode) {
+    public ModeAdministration(long id, String descriptionMode) {
         this.id = id;
         this.descriptionMode = descriptionMode;
     }
@@ -17,7 +17,7 @@ public class ModeAdministration {
     public Long getId() {
         return id;
     }
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
     public String getDescriptionMode() {

@@ -95,24 +95,3 @@ CREATE TABLE farmacyMedicine(
     CONSTRAINT FkFmFarmacy FOREIGN KEY (idFarmacy) REFERENCES farmacy(idFarmacy)
 );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
