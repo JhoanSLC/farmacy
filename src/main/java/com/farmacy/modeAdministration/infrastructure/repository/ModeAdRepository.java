@@ -1,16 +1,14 @@
 package com.farmacy.modeAdministration.infrastructure.repository;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 
+import com.farmacy.database.DatabaseConnection;
 import com.farmacy.modeAdministration.domain.entitiy.ModeAdministration;
 import com.farmacy.modeAdministration.domain.service.ModeAdService;
-
-import database.DatabaseConnection;
 
 public class ModeAdRepository implements ModeAdService {
     private Connection con;
@@ -57,13 +55,38 @@ public class ModeAdRepository implements ModeAdService {
 
     @Override
     public Optional<ModeAdministration> findModeAdById(long id) {
-        // TODO Auto-generated method stub
+        String findByIdQuery = "SELECT id, descriptionMode FROM modeAdministration WHERE id = ?";
+        try (PreparedStatement ps = con.prepareStatement(findByIdQuery)){
+            ps.setLong(1, id);
+
+            try (ResultSet set = ps.executeQuery()){
+                if (set.next()){
+                    long resultId = set.getLong("id");
+                    String resultDescription = set.getString("descriptionMode");
+    
+                    System.out.printf("Id: %d%nDescription: %s",resultId,resultDescription);
+                    ModeAdministration searchedModeAd = new ModeAdministration(resultId,resultDescription);
+                    return Optional.of(searchedModeAd);
+                }
+            };
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return Optional.empty();
     }
 
     @Override
-    public void updateModeAd(long id) {
-        // TODO Auto-generated method stub
+    public void updateModeAd(long id, String description) {
+         String updateQuery = "UPDATE modeAdministration SET descriptionMode = ? WHERE id = ?";
+        try (PreparedStatement ps = con.prepareStatement(updateQuery)) {
+            ps.setString(1, description);
+            ps.setLong(2, id);
+
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
     }
 
