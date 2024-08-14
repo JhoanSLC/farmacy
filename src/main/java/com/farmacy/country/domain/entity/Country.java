@@ -4,16 +4,13 @@ public class Country {
     private String codeCountry;
     private String nameCountry;
 
-    // Constructor vacío
     public Country() {}
 
-    // Constructor con parámetros
     public Country(String codeCountry, String nameCountry) {
         this.codeCountry = codeCountry;
         this.nameCountry = nameCountry;
     }
 
-    // Getters y setters
     public String getCodeCountry() {
         return codeCountry;
     }

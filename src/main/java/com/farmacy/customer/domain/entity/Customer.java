@@ -12,8 +12,8 @@ public class Customer {
     private double lon;
     private double latitud;
 
+    public Customer(){}
     
-
     public Customer(String idCustomer, String nameCustomer, String lastNameCustomer, String codeCityCustomer,
             String emailCustomer, Date birthDate, double lon, double latitud) {
         this.idCustomer = idCustomer;
