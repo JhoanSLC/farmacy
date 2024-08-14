@@ -7,7 +7,7 @@ import com.farmacy.screen.ScreenController;
 public class ModeAdMenu {
     private final ModeAdController modeAdController;
     private final ScreenController screen = new ScreenController();
-    private final Scanner sc = new Scanner(System.in); // Mueve el Scanner fuera del bucle
+    private final Scanner sc = new Scanner(System.in);
 
     public ModeAdMenu() {
         this.modeAdController = new ModeAdController();
@@ -17,10 +17,12 @@ public class ModeAdMenu {
         boolean isRunning = true;
         while (isRunning) {
             screen.clean();
-            System.out.printf("++++++++++++++++++++++++++%n++ Mode Administration CRUD ++%n++++++++++++++++++++++++++%n");
+            System.out.printf("++++++++++++++++++++++++++++++%n++ Mode Administration CRUD ++%n++++++++++++++++++++++++++++++%n");
             System.out.printf("%nType the number of the action you want to perform%n");
             System.out.printf("%n1. Create modeAdministration%n2. Find modeAdministration by ID%n3. Update modeAdministration%n4. Delete modeAdministration%n5. List all modeAdministrations%n6. Return to Main Menu%n");
-            String userOption = sc.nextLine(); // Usa el mismo Scanner para todas las iteraciones
+            System.out.println("");
+            System.out.print("Choose an option: ");
+            String userOption = sc.nextLine(); 
             
             switch (userOption) {
                 case "1":

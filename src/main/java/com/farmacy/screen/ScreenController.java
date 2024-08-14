@@ -27,6 +27,5 @@ public class ScreenController {
         Scanner scan = new Scanner(System.in);
         System.out.printf("%nPress any key to continue...%n");
         scan.nextLine();
-        scan.close();
     }
 }

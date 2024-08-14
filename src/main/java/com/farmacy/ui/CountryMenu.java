@@ -18,9 +18,11 @@ public class CountryMenu {
         boolean isRunning = true;
         while (isRunning) {
             screen.clean();
-            System.out.printf("+++++++++++++++++++++++++%n++ Country CRUD ++%n+++++++++++++++++++++++++%n");
+            System.out.printf("++++++++++++++++++%n++ Country CRUD ++%n++++++++++++++++++%n");
             System.out.printf("%nType the number of the action you want to perform%n");
             System.out.printf("%n1. Create country%n2. Find country by code%n3. Update country%n4. Delete country%n5. List all countries%n6. Return to Main Menu%n");
+            System.out.println("");
+            System.out.print("Choose an option: ");
             String userOption = sc.nextLine();
             
             switch (userOption) {

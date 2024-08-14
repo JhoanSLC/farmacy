@@ -67,7 +67,7 @@ public class ModeAdRepository implements ModeAdService {
                     long resultId = set.getLong("id");
                     String resultDescription = set.getString("descriptionMode");
     
-                    System.out.printf("Id: %d%nDescription: %s",resultId,resultDescription);
+                    System.out.printf("%nId: %d%nDescription: %s%n",resultId,resultDescription);
                     ModeAdministration searchedModeAd = new ModeAdministration(resultId,resultDescription);
                     return Optional.of(searchedModeAd);
                 }
