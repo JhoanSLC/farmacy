@@ -57,6 +57,7 @@ public class ActivePrincipleRepository implements ActivePrincipleService {
                     long id = rs.getLong("idAp");
                     String name = rs.getString("nameAp");
                     ActivePrinciple activePrinciple = new ActivePrinciple(id, name);
+                    System.out.printf("%nidAp: %d%nnameAp: %s%n",id,name);
                     return Optional.of(activePrinciple);
                 }
             }

@@ -60,7 +60,7 @@ public class CityController {
         String codeCity = scan.nextLine();
         Optional<City> city = findCityByIdUC.findById(codeCity);
         city.ifPresentOrElse(
-            c -> System.out.println("City found: " + c.getNameCity() + " (" + c.getCodeCity() + ")"),
+            c -> System.out.printf("%ncityCode: %s%nName: %s%ncodeRegion: %s%n",c.getCodeCity(),c.getNameCity(),c.getCodeReg()),
             () -> System.out.println("City not found.")
         );
         screen.pause();
@@ -81,7 +81,7 @@ public class CityController {
     public void listAllCities() {
         screen.clean();
         List<City> cities = listAllCitiesUC.listAll();
-        cities.forEach(city -> System.out.println(city.getCodeCity() + " - " + city.getNameCity()));
+        cities.forEach(city -> System.out.printf("%ncityCode: %s%nName: %s%ncodeRegion: %s%n",city.getCodeCity(),city.getNameCity(),city.getCodeReg()));
         screen.pause();
     }
 

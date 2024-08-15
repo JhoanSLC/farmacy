@@ -25,7 +25,7 @@ public class ScreenController {
 
     public void pause(){
         Scanner scan = new Scanner(System.in);
-        System.out.printf("%nPress any key to continue...%n");
+        System.out.printf("%nPress ENTER to continue...%n");
         scan.nextLine();
     }
 }

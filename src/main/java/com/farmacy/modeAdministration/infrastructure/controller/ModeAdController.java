@@ -41,6 +41,10 @@ public class ModeAdController {
         modeAd.setDescriptionMode(modeAdDescription);
 
         createModeAdUC.create(modeAd);
+
+        screen.clean();
+        System.out.println("Created succesfully!!");
+        screen.pause();
     }
 
     public void deleteModeAd(){

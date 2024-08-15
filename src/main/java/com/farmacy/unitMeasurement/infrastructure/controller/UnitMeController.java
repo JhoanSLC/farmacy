@@ -41,6 +41,10 @@ public class UnitMeController {
         unitMeasurement.setNameUm(nameUm);
 
         createUnitMeasurementUC.create(unitMeasurement);
+
+        screen.clean();
+        System.out.println("Created succesfully!!");
+        screen.pause();
     }
 
     public void deleteUnitMeasurement() {
@@ -84,7 +88,6 @@ public class UnitMeController {
                 System.out.printf("Id: %d%nName: %s%n", unitMeasurement.getIdUm(), unitMeasurement.getNameUm());
             }
         }
-        System.out.printf("%nPress any key to continue...");
-        scan.nextLine();
+        screen.pause();
     }
 }
